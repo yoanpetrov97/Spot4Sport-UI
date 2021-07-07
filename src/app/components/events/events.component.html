@@ -1,1 +1,53 @@
 <h1 style="margin: 5px 0">Събития</h1>
+<div style="width: 100%; margin: 5px 0">
+    <div class="dropdown" class="city-dropdown" style="float: left; margin-left: 6%; margin-right: 10%;">
+        <button class="btn btn-secondary dropdown-toggle dark-green-button"
+                style="width: 100px"
+                type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            София
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item">София</a>
+            <a class="dropdown-item">Пловдив</a>
+            <a class="dropdown-item">Варна</a>
+        </div>
+    </div>
+    <div class="search-event" style="width: 60%;">
+        <input #inputElement
+               (keyup.enter)="searchEvents(inputElement.value)"
+               style="width: 80%"
+               type="text"
+               class="form-control"
+               placeholder="Име на събитие, място, спорт или организатор">
+        <div style="margin-left: 10px">
+            <button type="submit"
+                    class="btn green-button"
+                    style="width: 100px;"
+                    (click)="searchEvents(inputElement.value);">
+                Търси
+            </button>
+        </div>
+    </div>
+</div>
+<div class="events">
+    <div class="card event" *ngFor="let event of visibleEvents">
+        <img src="/assets/court-{{event.court.id%4}}.jpg" height="200" class="card-img-top event-image"
+             alt="{{event.court.name}}">
+        <div class="card-body">
+            <h5 class="card-title name">{{event.name}}</h5>
+            <div class="card-description">
+                <p class="card-text playgrounds">Място: {{event.court.name}}</p>
+                <p class="card-text playgrounds">Спорт: {{event.sport}}</p>
+                <p class="card-text address">
+                    <strong>Организатор: {{event.organizer.name}}</strong>
+                </p>
+                <p class="card-text address">
+                    <strong>Брой спортуващи: {{event.numberOfUsers}}</strong>
+                </p>
+            </div>
+        </div>
+        <a class="btn btn-danger reserve-button">Откажи участие</a>
+        <!--            <a class="btn btn-danger delete-button" (click)="deleteEvent(event.id)">Изтрий</a>-->
+    </div>
+</div>
