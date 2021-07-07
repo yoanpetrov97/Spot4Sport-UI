@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    api: "https://spot4sport.herokuapp.com"
+    api: "https://spot4sport-backend.herokuapp.com"
 };
