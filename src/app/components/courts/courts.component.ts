@@ -10,6 +10,7 @@ import {Court} from "../models/court";
 export class CourtsComponent implements OnInit {
     fileToUpload: File = null;
     courts: Court[] = [];
+    visibleCourts: Court[] = [];
 
     constructor(private courtsService: CourtsService) {
     }
@@ -22,6 +23,7 @@ export class CourtsComponent implements OnInit {
                 court.playgrounds = court.playgrounds.replace(", ", "\n");
             }
         });
+        this.visibleCourts = [...this.courts];
     }
 
     getAllCourts(): Promise<Court[]> {
@@ -32,6 +34,13 @@ export class CourtsComponent implements OnInit {
         const court: Court = await this.courtsService.addNewCourt(courtName);
         this.courts = await this.getAllCourts();
         return court;
+    }
+
+    searchCourts(searchString: string): void {
+        this.visibleCourts = this.courts.filter(court =>
+            court.name.toLowerCase().includes(searchString.toLowerCase()) ||
+            court.playgrounds.toLowerCase().includes(searchString.toLowerCase()) ||
+            court.address.toLowerCase().includes(searchString.toLowerCase()));
     }
 
     async deleteCourt(id: number): Promise<void> {
