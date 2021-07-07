@@ -32,7 +32,7 @@
 </div>
 <div class="courts">
     <div class="card court" *ngFor="let court of visibleCourts">
-        <img src="/assets/court-{{court.id%4}}.jpg" height="200" class="card-img-top court-image" alt="{{court.name}}">
+        <img src="/assets/{{court.id}}.jpg" height="200" class="card-img-top court-image" alt="{{court.name}}">
         <div class="card-body">
             <h5 class="card-title name">{{court.name}}</h5>
             <div class="card-description">

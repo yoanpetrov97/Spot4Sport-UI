@@ -32,7 +32,7 @@
 </div>
 <div class="users">
     <div class="card user" *ngFor="let user of visibleUsers">
-        <img src="/assets/user-{{user.id%4}}.jpg" height="300" width="200" class="card-img-top user-image" alt="{{user.name}}">
+        <img src="/assets/{{user.id}}.jpg" height="300" width="200" class="card-img-top user-image" alt="{{user.name}}">
         <div class="card-body">
             <h5 class="card-title name">{{user.name}}</h5>
             <div class="card-description">

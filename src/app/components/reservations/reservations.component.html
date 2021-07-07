@@ -1,38 +1,23 @@
 <h1 style="margin: 5px 0">Резервации</h1>
-<div style="width: 100%; margin: 5px 0">
-    <div class="dropdown" class="city-dropdown" style="float: left; margin-left: 6%; margin-right: 10%;">
-        <button class="btn btn-secondary dropdown-toggle dark-green-button"
-                style="width: 100px"
-                type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-            София
+<div class="search-reservation" style="width: 60%; margin: 5px 0">
+    <input #inputElement
+           (keyup.enter)="searchReservations(inputElement.value)"
+           style="width: 80%"
+           type="text"
+           class="form-control"
+           placeholder="Име на спортна зала, спорт или организатор">
+    <div style="margin-left: 10px">
+        <button type="submit"
+                class="btn green-button"
+                style="width: 100px;"
+                (click)="searchReservations(inputElement.value);">
+            Търси
         </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item">София</a>
-            <a class="dropdown-item">Пловдив</a>
-            <a class="dropdown-item">Варна</a>
-        </div>
-    </div>
-    <div class="search-reservation" style="width: 60%;">
-        <input #inputElement
-               (keyup.enter)="searchReservations(inputElement.value)"
-               style="width: 80%"
-               type="text"
-               class="form-control"
-               placeholder="Име на спортна зала, спорт или организатор">
-        <div style="margin-left: 10px">
-            <button type="submit"
-                    class="btn green-button"
-                    style="width: 100px;"
-                    (click)="searchReservations(inputElement.value);">
-                Търси
-            </button>
-        </div>
     </div>
 </div>
 <div class="reservations">
     <div class="card reservation" *ngFor="let reservation of visibleReservations">
-        <img src="/assets/court-{{reservation.court.id%4}}.jpg" height="200" class="card-img-top reservation-image"
+        <img src="/assets/{{reservation.court.id}}.jpg" height="200" class="card-img-top reservation-image"
              alt="{{reservation.court.name}}">
         <div class="card-body">
             <h5 class="card-title name">{{reservation.court.name}}</h5>
