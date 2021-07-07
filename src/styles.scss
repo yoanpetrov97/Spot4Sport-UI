@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+$spot4sport-green: #008c4f;
+$spot4sport-dark-green: #005c33;
+
+.green-button {
+    background-color: $spot4sport-green;
+    border-color: $spot4sport-green;
+    color: white;
+}
+
+.dark-green-button {
+    background-color: $spot4sport-dark-green;
+    border-color: $spot4sport-dark-green;
+    color: white;
+}

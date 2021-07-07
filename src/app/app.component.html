@@ -1,0 +1,18 @@
+<div class="header">
+    <img src="assets/logo.png"
+         height="60px"
+         class="logo"
+         routerLink="/courts">
+    <div class="navigation">
+        <span class="navigation-buttons">
+            <a routerLink="/reservations" class="btn-link" [ngClass]="{'active-button': url === '/reservations'}">Резервации</a>
+            <a routerLink="/courts" class="btn-link" [ngClass]="{'active-button': url === '/courts'}">Спортни зали</a>
+            <a routerLink="/events" class="btn-link" [ngClass]="{'active-button': url === '/events'}">Събития</a>
+            <a routerLink="/users" class="btn-link" [ngClass]="{'active-button': url === '/users'}">Хора</a>
+            <img src="assets/profile_pic.png" class="profile-pic" height="50">
+        </span>
+    </div>
+</div>
+<div style="position: absolute; top: 80px; bottom: 0; left: 0; right: 0; overflow: auto">
+    <router-outlet></router-outlet>
+</div>

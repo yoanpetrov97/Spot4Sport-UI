@@ -1,0 +1,61 @@
+@import "src/styles";
+
+:host {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+    display: flex;
+    background-color: $spot4sport-green;
+    width: 100%;
+    height: 80px;
+    align-items: flex-end;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .6);
+    overflow: hidden;
+
+    .navigation {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: flex-end;
+        margin-right: 30px;
+
+        .navigation-buttons {
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            a {
+                white-space: nowrap;
+                color: white;
+                margin-right: 30px;
+                font-family: sans-serif;
+                font-size: large;
+            }
+
+            .active-button {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .6);
+}

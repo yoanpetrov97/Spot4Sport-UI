@@ -1,0 +1,78 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delete-button {
+    margin-top: 5px;
+}
+
+.search-court {
+    display: flex;
+}
+
+.courts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.court {
+    width: 20rem;
+    padding: 10px 10px 0 10px;
+    margin: 10px;
+    height: 500px;
+}
+
+.card-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card-text {
+    text-align: justify;
+}
+
+.name {
+    white-space: break-spaces;
+}
+
+.playgrounds {
+    white-space: break-spaces;
+    align-self: center;
+    text-align: center;
+}
+
+.address {
+    text-align: center;
+}
+
+.card-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.reserve-button {
+    margin-bottom: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .6);
+}
+
+.city-dropdown {
+    align-self: flex-start;
+    margin: 0 10px;
+}
+
+.court-image {
+    box-shadow: 0 0 8px rgba(0, 0, 0, .6);
+    border-radius: 3%;
+}
