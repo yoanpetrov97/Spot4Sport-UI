@@ -1,1 +1,50 @@
-<h1 style="margin: 5px 0">Хора</h1>
+<h1 style="margin: 5px 0">Спортуващи</h1>
+<div style="width: 100%; margin: 5px 0">
+    <div class="dropdown" class="city-dropdown" style="float: left; margin-left: 6%; margin-right: 10%;">
+        <button class="btn btn-secondary dropdown-toggle dark-green-button"
+                style="width: 100px"
+                type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            София
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item">София</a>
+            <a class="dropdown-item">Пловдив</a>
+            <a class="dropdown-item">Варна</a>
+        </div>
+    </div>
+    <div class="search-user" style="width: 60%;">
+        <input #inputElement
+               (keyup.enter)="searchUsers(inputElement.value)"
+               style="width: 80%"
+               type="text"
+               class="form-control"
+               placeholder="Име на спортна зала, спорт или район">
+        <div style="margin-left: 10px">
+            <button type="submit"
+                    class="btn green-button"
+                    style="width: 100px;"
+                    (click)="searchUsers(inputElement.value);">
+                Търси
+            </button>
+        </div>
+    </div>
+</div>
+<div class="users">
+    <div class="card user" *ngFor="let user of visibleUsers">
+        <img src="/assets/user-{{user.id%4}}.jpg" height="300" width="200" class="card-img-top user-image" alt="{{user.name}}">
+        <div class="card-body">
+            <h5 class="card-title name">{{user.name}}</h5>
+            <div class="card-description">
+                <p class="card-text sports">{{user.sports}}</p>
+                <p class="card-text address">
+                    <strong>Години: {{user.age}}</strong>
+                    <br>
+<!--                    <strong>Пол: {{user.gender}}</strong>-->
+                </p>
+            </div>
+        </div>
+        <a class="btn green-button message-button">Съобщение</a>
+        <!--            <a class="btn btn-danger delete-button" (click)="deleteUser(user.id)">Изтрий</a>-->
+    </div>
+</div>

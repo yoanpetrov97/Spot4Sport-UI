@@ -8,7 +8,6 @@ import {Court} from "../models/court";
     styleUrls: ["./courts.component.scss"]
 })
 export class CourtsComponent implements OnInit {
-    fileToUpload: File = null;
     courts: Court[] = [];
     visibleCourts: Court[] = [];
 
@@ -46,9 +45,5 @@ export class CourtsComponent implements OnInit {
     async deleteCourt(id: number): Promise<void> {
         await this.courtsService.deleteCourt(id);
         this.courts = await this.getAllCourts();
-    }
-
-    handleFileInput(files: FileList): void {
-        this.fileToUpload = files.item(0);
     }
 }
